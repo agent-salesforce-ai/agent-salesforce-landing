@@ -273,6 +273,19 @@
             border-color: var(--color-hostile-red);
         }
 
+        .integration-logo {
+    height: 24px;
+    width: auto;
+    max-width: 100px;
+    object-fit: contain;
+}
+@media (max-width: 768px) {
+    .integration-logo {
+        height: 20px;
+        max-width: 80px;
+    }
+}
+
         /* Gradient specific styles */
         [data-theme="gradient-flow"] .hero-gradient,
         [data-theme="retro-futurism"] .hero-gradient {
