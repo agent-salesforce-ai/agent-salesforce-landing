@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent-SalesForce.ai - The New Top Performer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* THEME DEFINITIONS */
+        :root {
+            /* Default: Molten Core */
+            --color-bg: #1C1917;
+            --color-bg-alt: #292524;
+            --color-text-base: #F1F5F9;
+            --color-text-muted: #A8A29E;
+            --color-text-heading: #FFFFFF;
+            --color-primary: #F97316;
+            --color-secondary: #EF4444;
+            --color-border: #44403C;
+            --color-logo-primary: var(--color-primary);
+            --color-hostile-red: #DC143C;
+        }
+        [data-theme="corporate-edge"] {
+            --color-bg: #FFFFFF;
+            --color-bg-alt: #F8F9FA;
+            --color-text-base: #212121;
+            --color-text-muted: #5f5f5f;
+            --color-text-heading: #000000;
+            --color-primary: #0052CC;
+            --color-secondary: #FFAA00;
+            --color-border: #e0e0e0;
+            --color-logo-primary: var(--color-primary);
+        }
+        [data-theme="gradient-flow"] {
+            --color-bg: #111827;
+            --color-bg-alt: #1F2937;
+            --color-text-base: #F9FAFB;
+            --color-text-muted: #9CA3AF;
+            --color-text-heading: #FFFFFF;
+            --color-primary: #7C3AED;
+            --color-secondary: #EC4899;
+            --color-border: #374151;
+            --color-logo-primary: var(--color-primary);
+        }
+        [data-theme="minimalist-tech"] {
+            --color-bg: #F8F9FA;
+            --color-bg-alt: #FFFFFF;
+            --color-text-base: #343A40;
+            --color-text-muted: #6C757D;
+            --color-text-heading: #000000;
+            --color-primary: #000000;
+            --color-secondary: #6C757D;
+            --color-border: #DEE2E6;
+            --color-logo-primary: var(--color-primary);
+        }
+        [data-theme="emerald-insight"] {
+            --color-bg: #081411;
+            --color-bg-alt: #0a1f1a;
+            --color-text-base: #E6F5F1;
+            --color-text-muted: #a3b8b3;
+            --color-text-heading: #FFFFFF;
+            --color-primary: #10B981;
+            --color-secondary: #34D399;
+            --color-border: #1f3a33;
+            --color-logo-primary: var(--color-primary);
+        }
+        [data-theme="sunrise-automation"] {
+            --color-bg: #FFF7F0;
+            --color-bg-alt: #FFFFFF;
+            --color-text-base: #4A2511;
+            --color-text-muted: #7a4f35;
+            --color-text-heading: #2c160a;
+            --color-primary: #FF8C42;
+            --color-secondary: #FF5733;
+            --color-border: #ffdcc3;
+            --color-logo-primary: var(--color-primary);
+        }
+        [data-theme="cobalt-steel"] {
+            --color-bg: #1F2937;
+            --color-bg-alt: #374151;
+            --color-text-base: #E5E7EB;
+            --color-text-muted: #9CA3AF;
+            --color-text-heading: #FFFFFF;
+            --color-primary: #3B82F6;
+            --color-secondary: #9CA3AF;
+            --color-border: #4B5563;
+            --color-logo-primary: var(--color-primary);
+        }
+        [data-theme="premium-noir"] {
+            --color-bg: #121212;
+            --color-bg-alt: #1E1E1E;
+            --color-text-base: #EAEAEA;
+            --color-text-muted: #A0A0A0;
+            --color-text-heading: #FFFFFF;
+            --color-primary: #D4AF37;
+            --color-secondary: #b08d2d;
+            --color-border: #333333;
+            --color-logo-primary: var(--color-primary);
+        }
+        [data-theme="bio-luminescent"] {
+            --color-bg: #01081A;
+            --color-bg-alt: #021033;
+            --color-text-base: #B0C4DE;
+            --color-text-muted: #778ca9;
+            --color-text-heading: #E6F0FF;
+            --color-primary: #40E0D0;
+            --color-secondary: #00BFFF;
+            --color-border: #102a5e;
+            --color-logo-primary: var(--color-primary);
+        }
+        [data-theme="retro-futurism"] {
+            --color-bg: #1A1A2E;
+            --color-bg-alt: #2a2a4a;
+            --color-text-base: #E0E0E0;
+            --color-text-muted: #a0a0c0;
+            --color-text-heading: #FFFFFF;
+            --color-primary: #F04E98;
+            --color-secondary: #00BFFF;
+            --color-border: #4a4a6e;
+            --color-logo-primary: var(--color-primary);
+        }
+
+        /* NEW & UPDATED EVIL THEMES */
+        [data-theme="inferno"] {
+            --color-bg: #100500;
+            --color-bg-alt: #1a0a00;
+            --color-text-base: #FFEADD; /* More readable */
+            --color-text-muted: #D97706; /* More readable */
+            --color-text-heading: #FFFFFF;
+            --color-primary: #FF4500;
+            --color-secondary: #DC143C;
+            --color-border: #4f2010;
+            --color-logo-primary: var(--color-primary);
+        }
+        [data-theme="tyrant"] {
+            --color-bg: #120A1A;
+            --color-bg-alt: #241436;
+            --color-text-base: #EAE0FF;
+            --color-text-muted: #c0b0e0;
+            --color-text-heading: #FFFFFF;
+            --color-primary: #9400D3;
+            --color-secondary: #FFD700;
+            --color-border: #4a2c6b;
+            --color-logo-primary: var(--color-primary);
+        }
+        [data-theme="glitch-protocol"] {
+            --color-bg: #000000;
+            --color-bg-alt: #111111;
+            --color-text-base: #E0E0E0;
+            --color-text-muted: #999999;
+            --color-text-heading: #FFFFFF;
+            --color-primary: #00FF00;
+            --color-secondary: #FF00FF;
+            --color-border: #333333;
+            --color-logo-primary: var(--color-primary);
+        }
+        [data-theme="red-ledger"] {
+            --color-bg: #FDFDFD;
+            --color-bg-alt: #F5F5F5;
+            --color-text-base: #222222;
+            --color-text-muted: #666666;
+            --color-text-heading: #000000;
+            --color-primary: #B22222;
+            --color-secondary: #555555;
+            --color-border: #DDDDDD;
+            --color-logo-primary: var(--color-primary);
+        }
+        [data-theme="molten-core"] {
+            --color-bg: #1C1917;
+            --color-bg-alt: #292524;
+            --color-text-base: #F1F5F9;
+            --color-text-muted: #A8A29E;
+            --color-text-heading: #FFFFFF;
+            --color-primary: #F97316;
+            --color-secondary: #EF4444;
+            --color-border: #44403C;
+            --color-logo-primary: var(--color-primary);
+        }
+        [data-theme="crimson-reaper"] {
+            --color-bg: #000000;
+            --color-bg-alt: #111111;
+            --color-text-base: #FFFFFF;
+            --color-text-muted: #A0A0A0;
+            --color-text-heading: #FFFFFF;
+            --color-primary: #DC143C;
+            --color-secondary: #B22222;
+            --color-border: #333000;
+            --color-logo-primary: var(--color-primary);
+        }
+
+        /* NEW STRATEGIC THEMES */
+        [data-theme="ivory-tower"] {
+            --color-bg: #FFFFFF;
+            --color-bg-alt: #F7F7F7;
+            --color-text-base: #222222;
+            --color-text-muted: #666666;
+            --color-text-heading: #000000;
+            --color-primary: #444444;
+            --color-secondary: #888888;
+            --color-border: #EAEAEA;
+            --color-logo-primary: var(--color-primary);
+        }
+        [data-theme="sentinel-blue"] {
+            --color-bg: #0A192F;
+            --color-bg-alt: #172A45;
+            --color-text-base: #CCD6F6;
+            --color-text-muted: #8892B0;
+            --color-text-heading: #FFFFFF;
+            --color-primary: #64FFDA;
+            --color-secondary: #3A82EE;
+            --color-border: #233554;
+            --color-logo-primary: var(--color-primary);
+        }
+        [data-theme="obsidian"] {
+            --color-bg: #000000;
+            --color-bg-alt: #111111;
+            --color-text-base: #EAEAEA;
+            --color-text-muted: #999999;
+            --color-text-heading: #FFFFFF;
+            --color-primary: #FFFFFF;
+            --color-secondary: #CCCCCC;
+            --color-border: #222222;
+            --color-logo-primary: var(--color-primary);
+        }
+        [data-theme="diablo-ivory"] {
+            --color-bg: #FFFFFF;
+            --color-bg-alt: #F5F5F5;
+            --color-text-base: #222222;
+            --color-text-muted: #666666;
+            --color-text-heading: #000000;
+            --color-primary: #B22222;
+            --color-secondary: #8B0000;
+            --color-border: #DDDDDD;
+            --color-logo-primary: var(--color-primary);
+        }
+
+
+        /* Apply theme variables */
+        .bg-main { background-color: var(--color-bg); }
+        .bg-alt { background-color: var(--color-bg-alt); }
+        .text-base { color: var(--color-text-base); }
+        .text-muted { color: var(--color-text-muted); }
+        .text-heading { color: var(--color-text-heading); }
+        .text-primary { color: var(--color-primary); }
+        .text-secondary { color: var(--color-secondary); }
+        .border-main { border-color: var(--color-border); }
+        .logo-primary { color: var(--color-logo-primary); }
+        
+        .btn-primary {
+            background-color: var(--color-hostile-red);
+            color: #FFFFFF;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--color-text-base);
+            border: 1px solid var(--color-border);
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary.btn-secondary-hostile {
+            border-color: var(--color-hostile-red);
+        }
+
+        /* Gradient specific styles */
+        [data-theme="gradient-flow"] .hero-gradient,
+        [data-theme="retro-futurism"] .hero-gradient {
+            background-image: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+        .hero-gradient {
+            color: var(--color-primary);
+        }
+
+        .replaced-text {
+            color: #DC143C;
+            text-decoration: line-through;
+            text-decoration-thickness: 2px;
+        }
+
+        .text-accent-red {
+            color: #DC143C !important;
+        }
+        
+        .interactive-card {
+            transition: all 0.3s ease;
+        }
+        .interactive-card:hover {
+            transform: translateY(-8px);
+            border-color: #DC143C;
+        }
+        
+        .coming-soon-card {
+            opacity: 0.6;
+            filter: grayscale(50%);
+        }
+
+        .btn-primary:hover {
+             filter: brightness(1.2);
+             transform: scale(1.05);
+             box-shadow: 0 0 25px rgba(220, 20, 60, 0.8);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--color-bg-alt);
+            border-color: var(--color-hostile-red);
+            color: var(--color-hostile-red);
+            transform: scale(1.05);
+        }
+        
+        .badge-highlight {
+            background-color: var(--color-hostile-red);
+            color: #FFFFFF;
+        }
+
+        /* Other styling */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Theme Switcher Styles */
+        #theme-switcher-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            background-color: var(--color-bg-alt);
+            color: var(--color-text-base);
+            border: 1px solid var(--color-border);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        #theme-switcher-toggle:hover {
+            transform: scale(1.1) rotate(20deg);
+        }
+        #theme-panel {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            z-index: 999;
+            background-color: var(--color-bg-alt);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            padding: 1rem;
+            width: 200px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            opacity: 0;
+            transform: translateY(10px);
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        #theme-panel.active {
+            opacity: 1;
+            transform: translateY(0);
+            visibility: visible;
+        }
+        .theme-button {
+            display: block;
+            width: 100%;
+            text-align: left;
+            padding: 0.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-bottom: 0.25rem;
+            color: var(--color-text-base);
+            font-size: 0.9rem;
+            transition: background-color 0.2s ease;
+        }
+        .theme-button:hover {
+            background-color: var(--color-bg);
+        }
+        .theme-button.active {
+            font-weight: bold;
+            color: var(--color-primary);
+        }
+
+        .theme-select-button {
+            transition: all 0.2s ease;
+            border: 2px solid transparent;
+            box-shadow: 0 0 0 2px var(--color-bg-alt);
+        }
+        .theme-select-button:hover {
+            transform: scale(1.2);
+        }
+        .theme-select-button.active {
+            border-color: var(--color-primary);
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="bg-main text-base antialiased">
+
+    <div class="bg-main">
+        <header class="absolute inset-x-0 top-0 z-50">
+            <nav class="container mx-auto flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+                <div class="flex lg:flex-1">
+                    <a href="#" class="-m-1.5 p-1.5">
+                        <div class="flex items-center space-x-2">
+                             <svg class="h-8 w-8 logo-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                 <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456Z" />
+                             </svg>
+                            <span class="text-xl font-bold text-heading">Agent-Sales<span class="font-extrabold text-accent-red">Force.ai</span></span>
+                        </div>
+                    </a>
+                </div>
+                 <div class="flex lg:hidden">
+                    <button type="button" id="mobile-menu-button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-base">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="hidden lg:flex lg:gap-x-12">
+                    <a href="#features" class="text-sm font-semibold leading-6 text-base hover:text-primary transition-colors">The Arsenal</a>
+                    <a href="#solutions" class="text-sm font-semibold leading-6 text-base hover:text-primary transition-colors">The Takeover</a>
+                    <a href="#live-demo" class="text-sm font-semibold leading-6 text-base hover:text-primary transition-colors">The Briefing</a>
+                </div>
+                <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+                    <a href="#" class="text-sm font-semibold leading-6 text-base hover:text-primary transition-colors">Log in <span aria-hidden="true">&rarr;</span></a>
+                </div>
+            </nav>
+            <div class="lg:hidden hidden" role="dialog" aria-modal="true" id="mobile-menu">
+                <div class="fixed inset-0 z-50"></div>
+                <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-main px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+                    <div class="flex items-center justify-between">
+                        <a href="#" class="-m-1.5 p-1.5">
+                            <span class="text-xl font-bold text-heading">Agent-Sales<span class="font-extrabold text-accent-red">Force.ai</span></span>
+                        </a>
+                        <button type="button" id="mobile-menu-close" class="-m-2.5 rounded-md p-2.5 text-base">
+                            <span class="sr-only">Close menu</span>
+                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="mt-6 flow-root">
+                        <div class="-my-6 divide-y border-main">
+                            <div class="space-y-2 py-6">
+                                <a href="#features" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-base hover:bg-alt">The Arsenal</a>
+                                <a href="#solutions" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-base hover:bg-alt">The Takeover</a>
+                                <a href="#live-demo" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-base hover:bg-alt">The Briefing</a>
+                            </div>
+                            <div class="py-6">
+                                <p class="text-sm font-semibold text-muted mb-4 px-3">Quick Theme</p>
+                                <div class="flex items-center gap-x-4 px-3">
+                                     <button class="theme-select-button w-6 h-6 rounded-full" data-theme="crimson-reaper" style="background-color: #DC143C;" title="Crimson Reaper"></button>
+                                     <button class="theme-select-button w-6 h-6 rounded-full" data-theme="sentinel-blue" style="background-color: #64FFDA;" title="Sentinel Blue"></button>
+                                     <button class="theme-select-button w-6 h-6 rounded-full" data-theme="diablo-ivory" style="background-color: #B22222;" title="Diablo Ivory"></button>
+                                     <button class="theme-select-button w-6 h-6 rounded-full" data-theme="obsidian" style="background-color: #FFFFFF;" title="Obsidian"></button>
+                                     <button class="theme-select-button w-6 h-6 rounded-full" data-theme="ivory-tower" style="background-color: #444444;" title="Ivory Tower"></button>
+                                </div>
+                            </div>
+                            <div class="py-6">
+                                <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-base hover:bg-alt">Log in</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="relative isolate px-6 pt-14 lg:px-8">
+            <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
+                <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[var(--color-secondary)] to-[var(--color-primary)] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+            </div>
+            <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+                <div class="text-center">
+                    <h1 class="text-4xl font-bold tracking-tight text-heading sm:text-6xl">Your Top Performer Just Got <span class="replaced-text">Replaced</span>.</h1>
+                    <p class="mt-6 text-lg leading-8 text-muted">This is Agent-SalesForce.ai. It doesn't need commission. It doesn't sleep. And it's here to render old sales methods obsolete.</p>
+                    <div class="mt-10 flex items-center justify-center gap-x-6">
+                        <a href="#live-demo" class="btn-primary rounded-md px-4 py-2.5 text-sm">Witness the Takeover</a>
+                        <a href="#features" class="btn-secondary rounded-md px-4 py-2.5 text-sm font-semibold">See the Arsenal <span aria-hidden="true">â†’</span></a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <section class="py-12 bg-alt">
+        <div class="container mx-auto px-6">
+            <p class="text-center text-accent-red text-sm font-semibold mb-8 uppercase tracking-wider">Connects to and dominates systems</p>
+            <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-6 md:gap-x-8">
+                 <span class="text-xl font-semibold text-muted opacity-70 hover:opacity-100 transition-opacity cursor-default">Google Workspace</span>
+                 <span class="text-accent-red text-2xl font-bold mx-2">&bull;</span>
+                 <span class="text-xl font-semibold text-muted opacity-70 hover:opacity-100 transition-opacity cursor-default">Microsoft 365</span>
+                 <span class="text-accent-red text-2xl font-bold mx-2">&bull;</span>
+                 <span class="text-xl font-semibold text-muted opacity-70 hover:opacity-100 transition-opacity cursor-default">Salesforce</span>
+                 <span class="text-accent-red text-2xl font-bold mx-2">&bull;</span>
+                 <span class="text-xl font-semibold text-muted opacity-70 hover:opacity-100 transition-opacity cursor-default">HubSpot</span>
+                 <span class="text-accent-red text-2xl font-bold mx-2">&bull;</span>
+                 <span class="text-xl font-semibold text-muted opacity-70 hover:opacity-100 transition-opacity cursor-default">Zoho</span>
+            </div>
+        </div>
+    </section>
+
+<section id="features" class="py-20 md:py-28 bg-main">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-4xl mx-auto">
+                <p class="text-sm font-bold uppercase text-primary tracking-widest">The Arsenal</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-heading mt-2">Replace, Then Dominate</h2>
+                <p class="text-lg text-muted mt-4">These aren't 'tools'. This is an unfair advantage. A new class of weapon for a new era of sales.</p>
+            </div>
+
+            <div class="mt-16 max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+                <div class="bg-alt p-6 rounded-lg border border-main interactive-card">
+                    <div class="text-accent-red"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18.375a6.375 6.375 0 0 0 6.375-6.375V12a6.375 6.375 0 0 0-6.375-6.375S5.625 5.625 5.625 12v.001A6.375 6.375 0 0 0 12 18.375Z" /><path stroke-linecap="round" stroke-linejoin="round" d="M12 12.75h.008v.008H12v-.008Z" /></svg></div>
+                    <h3 class="text-xl font-bold text-heading mt-4">The Perfect Playbook</h3>
+                    <p class="text-muted mt-2">It knows every objection, every angle, every response. It analyzes live sentiment and tells you the perfect thing to say. Can your team do that?</p>
+                </div>
+                <div class="bg-alt p-6 rounded-lg border border-main interactive-card">
+                    <div class="text-accent-red"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 0 1 0 3.75H5.625a1.875 1.875 0 0 1 0-3.75Z" /></svg></div>
+                    <h3 class="text-xl font-bold text-heading mt-4">Prospector AI</h3>
+                    <p class="text-muted mt-2">It mines through the noise, extracts real intent, and delivers qualified leads that matter.</p>
+                </div>
+                <div class="bg-alt p-6 rounded-lg border border-main interactive-card">
+                     <div class="text-accent-red"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" /></svg></div>
+                    <h3 class="text-xl font-bold text-heading mt-4">Human Error: Eliminated</h3>
+                    <p class="text-muted mt-2">Every call, email, and meeting is logged and analyzed flawlessly. No more forgotten follow-ups. No more "bad days." Only perfect execution.</p>
+                </div>
+                <div class="bg-alt p-6 rounded-lg border border-main interactive-card">
+                    <div class="text-accent-red"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" /></svg></div>
+                    <h3 class="text-xl font-bold text-heading mt-4">The 24/7 Operator</h3>
+                    <p class="text-muted mt-2">It never sleeps, never takes a day off, and never stops learning. While your competition rests, it's closing deals and refining its methods.</p>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                <a href="#live-demo" class="btn-primary inline-block px-8 py-3 text-lg rounded-md">Book a Demo</a>
+            </div>
+        </div>
+    </section>
+    
+    <section id="solutions" class="py-20 md:py-28 bg-alt">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto">
+                <p class="text-sm font-bold uppercase text-primary tracking-widest">The Takeover</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-heading mt-2">A New Sales Hierarchy</h2>
+                <p class="text-lg text-muted mt-4">Your sales team is a legacy system. These are the updates.</p>
+            </div>
+            
+            <div class="mt-16 mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-8">
+                
+                <div class="bg-main p-8 rounded-lg border-2 border-primary shadow-2xl shadow-primary/20 flex flex-col">
+                    <div class="flex-grow">
+                        <h3 class="text-2xl font-bold text-heading">The Opener</h3>
+                        <p class="mt-2 text-primary font-semibold">Maximum Efficiency. Zero Hesitation.</p>
+                        <p class="text-muted mt-4 text-sm">Mines terabytes of data to find every ideal prospect, engages thousands simultaneously, and systematically converts raw interest into a pipeline filled with qualified applications.</p>
+                    </div>
+                    <div class="mt-6">
+                        <a href="#live-demo" class="btn-primary inline-block w-full text-center px-6 py-3 text-sm font-semibold rounded-md">Schedule Demo</a>
+                    </div>
+                </div>
+
+                <div class="bg-main p-8 rounded-lg border border-main interactive-card coming-soon-card relative flex flex-col">
+                     <span class="badge-highlight absolute top-4 right-4 text-xs font-bold px-2 py-1 rounded-full">Coming Soon</span>
+                     <div class="flex-grow">
+                        <h3 class="text-2xl font-bold text-heading">The Closer</h3>
+                        <p class="mt-2 text-secondary font-semibold">Flawless Execution. Every Time.</p>
+                        <p class="text-muted mt-4 text-sm">Analyzes live sentiment, counters every objection with the perfect response, and guides conversations to a successful close. It turns 'maybe' into a signed deal.</p>
+                    </div>
+                </div>
+
+                <div class="bg-main p-8 rounded-lg border border-main interactive-card coming-soon-card relative flex flex-col">
+                    <span class="badge-highlight absolute top-4 right-4 text-xs font-bold px-2 py-1 rounded-full">Coming Soon</span>
+                    <div class="flex-grow">
+                        <h3 class="text-2xl font-bold text-heading">The Executive</h3>
+                        <p class="mt-2 text-secondary font-semibold">Strategic Oversight. Autonomous Growth.</p>
+                        <p class="text-muted mt-4 text-sm">Monitors the entire sales pipeline, allocates AI resources intelligently, and provides strategic C-suite insights to ensure total market domination.</p>
+                    </div>
+                </div>
+
+                <div class="bg-main p-8 rounded-lg border border-main interactive-card coming-soon-card relative flex flex-col">
+                    <span class="badge-highlight absolute top-4 right-4 text-xs font-bold px-2 py-1 rounded-full">Coming Soon</span>
+                    <div class="flex-grow">
+                        <h3 class="text-2xl font-bold text-heading">The Assistant</h3>
+                        <p class="mt-2 text-secondary font-semibold">Perfect Support. Zero Friction.</p>
+                        <p class="text-muted mt-4 text-sm">Handles all administrative tasks, scheduling, and follow-ups with perfect accuracy, freeing up human counterparts for high-value strategic work.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="live-demo" class="py-20 md:py-28 bg-main">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto">
+                <p class="text-sm font-bold uppercase text-primary tracking-widest">Schedule Your Briefing</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-heading mt-2">See It In Action</h2>
+                <p class="text-lg text-muted mt-4">The old way is over. Schedule a mandatory briefing to see how Agent-SalesForce.ai will replace your openers and triple your pipeline. Resistance is illogical.</p>
+                <div class="mt-10">
+                    <a href="#" class="btn-primary inline-block px-8 py-4 text-lg rounded-md">Schedule Mandatory Briefing</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="bg-alt">
+        <div class="container mx-auto px-6 py-8">
+            <div class="md:flex md:justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <svg class="h-8 w-8 logo-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456Z" /></svg>
+                    <span class="text-xl font-bold text-heading">Agent-Sales<span class="font-extrabold text-accent-red">Force.ai</span></span>
+                </div>
+                <div class="mt-4 md:mt-0 text-sm text-muted">
+                    Inevitable Progress, Inc.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+    <button id="theme-switcher-toggle" title="Change Theme">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 0 0-5.78 1.128 2.25 2.25 0 0 1-2.475 2.118A2.25 2.25 0 0 1 .879 16.122a3 3 0 0 0 5.78-1.128 2.25 2.25 0 0 1 2.475-2.118 2.25 2.25 0 0 1 2.118 2.475Z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12.632 3.675a3 3 0 0 1-5.264 2.556 2.25 2.25 0 0 0-2.475-2.118 2.25 2.25 0 0 0-2.118 2.475 3 3 0 0 1 5.264-2.556 2.25 2.25 0 0 0 2.475 2.118 2.25 2.25 0 0 0 2.118-2.475Z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="m16.121 9.53 1.128-5.78a3 3 0 0 0-1.128-5.78 2.25 2.25 0 0 1-2.118-2.475 2.25 2.25 0 0 1-2.475-2.118 3 3 0 0 0-5.78 1.128 2.25 2.25 0 0 1 2.118 2.475 2.25 2.25 0 0 1 2.475 2.118 3 3 0 0 0 5.78-1.128Z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.675 12.632a3 3 0 0 1 2.556 5.264 2.25 2.25 0 0 0 2.118 2.475 2.25 2.25 0 0 0 2.475-2.118 3 3 0 0 1-2.556-5.264 2.25 2.25 0 0 0-2.118-2.475 2.25 2.25 0 0 0-2.475 2.118Z" />
+        </svg>
+    </button>
+    <div id="theme-panel">
+        <h4 class="text-sm font-bold text-heading mb-2">Select a Theme</h4>
+        <div class="border-b border-main mb-2 pb-2">
+            <h5 class="text-xs font-bold text-muted uppercase tracking-wider mb-2">Hostile</h5>
+            <button class="theme-button" data-theme="crimson-reaper">Crimson Reaper</button>
+            <button class="theme-button" data-theme="molten-core">Molten Core</button>
+            <button class="theme-button" data-theme="inferno">Inferno</button>
+            <button class="theme-button" data-theme="tyrant">Tyrant</button>
+            <button class="theme-button" data-theme="glitch-protocol">Glitch Protocol</button>
+            <button class="theme-button" data-theme="red-ledger">Red Ledger</button>
+        </div>
+        <div class="border-b border-main mb-2 pb-2">
+            <h5 class="text-xs font-bold text-muted uppercase tracking-wider mb-2">Strategic</h5>
+            <button class="theme-button" data-theme="diablo-ivory">Diablo Ivory</button>
+            <button class="theme-button" data-theme="sentinel-blue">Sentinel Blue</button>
+            <button class="theme-button" data-theme="obsidian">Obsidian</button>
+            <button class="theme-button" data-theme="ivory-tower">Ivory Tower</button>
+        </div>
+        <h5 class="text-xs font-bold text-muted uppercase tracking-wider mb-2">Standard</h5>
+        <button class="theme-button" data-theme="corporate-edge">Corporate-Edge</button>
+        <button class="theme-button" data-theme="gradient-flow">Gradient-Flow</button>
+        <button class="theme-button" data-theme="minimalist-tech">Minimalist-Tech</button>
+        <button class="theme-button" data-theme="emerald-insight">Emerald-Insight</button>
+        <button class="theme-button" data-theme="sunrise-automation">Sunrise-Automation</button>
+        <button class="theme-button" data-theme="cobalt-steel">Cobalt-Steel</button>
+        <button class="theme-button" data-theme="premium-noir">Premium-Noir</button>
+        <button class="theme-button" data-theme="bio-luminescent">Bio-Luminescent</button>
+        <button class="theme-button" data-theme="retro-futurism">Retro-Futurism</button>
+    </div>
+
+    <script>
+        // Reveal on scroll
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        revealElements.forEach(el => revealObserver.observe(el));
+        
+        // Theme Switcher Logic
+        const themeToggleButton = document.getElementById('theme-switcher-toggle');
+        const themePanel = document.getElementById('theme-panel');
+        const themeButtons = document.querySelectorAll('.theme-button');
+        const themeSelectButtons = document.querySelectorAll('.theme-select-button');
+        const docElement = document.documentElement;
+
+        const applyTheme = (theme) => {
+            docElement.setAttribute('data-theme', theme);
+            localStorage.setItem('agent-salesforce-theme', theme);
+
+            themeButtons.forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.theme === theme);
+            });
+             themeSelectButtons.forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.theme === theme);
+            });
+        };
+
+        themeToggleButton.addEventListener('click', () => {
+            themePanel.classList.toggle('active');
+        });
+
+        themeButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const themeName = button.dataset.theme;
+                applyTheme(themeName);
+            });
+        });
+
+         themeSelectButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const themeName = button.dataset.theme;
+                applyTheme(themeName);
+            });
+        });
+
+        // Mobile Menu Logic
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+        });
+        mobileMenuClose.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+        // Close menu when a link is clicked
+        mobileMenu.querySelectorAll('a, .theme-select-button').forEach(el => {
+            el.addEventListener('click', (e) => {
+                 if(e.currentTarget.tagName.toLowerCase() !== 'button') {
+                     mobileMenu.classList.add('hidden');
+                 }
+            });
+        });
+
+
+        // Apply saved theme on load
+        const savedTheme = localStorage.getItem('agent-salesforce-theme') || 'crimson-reaper';
+        applyTheme(savedTheme);
+
+    </script>
+</body>
+</html>
