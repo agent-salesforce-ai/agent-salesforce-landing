@@ -12,251 +12,22 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            background-color: #000000;
+            color: #FFFFFF;
         }
 
-        /* THEME DEFINITIONS */
-        :root {
-            /* Default: Molten Core */
-            --color-bg: #1C1917;
-            --color-bg-alt: #292524;
-            --color-text-base: #F1F5F9;
-            --color-text-muted: #A8A29E;
-            --color-text-heading: #FFFFFF;
-            --color-primary: #F97316;
-            --color-secondary: #EF4444;
-            --color-border: #44403C;
-            --color-logo-primary: var(--color-primary);
-            --color-hostile-red: #DC143C;
-        }
-        [data-theme="corporate-edge"] {
-            --color-bg: #FFFFFF;
-            --color-bg-alt: #F8F9FA;
-            --color-text-base: #212121;
-            --color-text-muted: #5f5f5f;
-            --color-text-heading: #000000;
-            --color-primary: #0052CC;
-            --color-secondary: #FFAA00;
-            --color-border: #e0e0e0;
-            --color-logo-primary: var(--color-primary);
-        }
-        [data-theme="gradient-flow"] {
-            --color-bg: #111827;
-            --color-bg-alt: #1F2937;
-            --color-text-base: #F9FAFB;
-            --color-text-muted: #9CA3AF;
-            --color-text-heading: #FFFFFF;
-            --color-primary: #7C3AED;
-            --color-secondary: #EC4899;
-            --color-border: #374151;
-            --color-logo-primary: var(--color-primary);
-        }
-        [data-theme="minimalist-tech"] {
-            --color-bg: #F8F9FA;
-            --color-bg-alt: #FFFFFF;
-            --color-text-base: #343A40;
-            --color-text-muted: #6C757D;
-            --color-text-heading: #000000;
-            --color-primary: #000000;
-            --color-secondary: #6C757D;
-            --color-border: #DEE2E6;
-            --color-logo-primary: var(--color-primary);
-        }
-        [data-theme="emerald-insight"] {
-            --color-bg: #081411;
-            --color-bg-alt: #0a1f1a;
-            --color-text-base: #E6F5F1;
-            --color-text-muted: #a3b8b3;
-            --color-text-heading: #FFFFFF;
-            --color-primary: #10B981;
-            --color-secondary: #34D399;
-            --color-border: #1f3a33;
-            --color-logo-primary: var(--color-primary);
-        }
-        [data-theme="sunrise-automation"] {
-            --color-bg: #FFF7F0;
-            --color-bg-alt: #FFFFFF;
-            --color-text-base: #4A2511;
-            --color-text-muted: #7a4f35;
-            --color-text-heading: #2c160a;
-            --color-primary: #FF8C42;
-            --color-secondary: #FF5733;
-            --color-border: #ffdcc3;
-            --color-logo-primary: var(--color-primary);
-        }
-        [data-theme="cobalt-steel"] {
-            --color-bg: #1F2937;
-            --color-bg-alt: #374151;
-            --color-text-base: #E5E7EB;
-            --color-text-muted: #9CA3AF;
-            --color-text-heading: #FFFFFF;
-            --color-primary: #3B82F6;
-            --color-secondary: #9CA3AF;
-            --color-border: #4B5563;
-            --color-logo-primary: var(--color-primary);
-        }
-        [data-theme="premium-noir"] {
-            --color-bg: #121212;
-            --color-bg-alt: #1E1E1E;
-            --color-text-base: #EAEAEA;
-            --color-text-muted: #A0A0A0;
-            --color-text-heading: #FFFFFF;
-            --color-primary: #D4AF37;
-            --color-secondary: #b08d2d;
-            --color-border: #333333;
-            --color-logo-primary: var(--color-primary);
-        }
-        [data-theme="bio-luminescent"] {
-            --color-bg: #01081A;
-            --color-bg-alt: #021033;
-            --color-text-base: #B0C4DE;
-            --color-text-muted: #778ca9;
-            --color-text-heading: #E6F0FF;
-            --color-primary: #40E0D0;
-            --color-secondary: #00BFFF;
-            --color-border: #102a5e;
-            --color-logo-primary: var(--color-primary);
-        }
-        [data-theme="retro-futurism"] {
-            --color-bg: #1A1A2E;
-            --color-bg-alt: #2a2a4a;
-            --color-text-base: #E0E0E0;
-            --color-text-muted: #a0a0c0;
-            --color-text-heading: #FFFFFF;
-            --color-primary: #F04E98;
-            --color-secondary: #00BFFF;
-            --color-border: #4a4a6e;
-            --color-logo-primary: var(--color-primary);
-        }
-
-        /* NEW & UPDATED EVIL THEMES */
-        [data-theme="inferno"] {
-            --color-bg: #100500;
-            --color-bg-alt: #1a0a00;
-            --color-text-base: #FFEADD; /* More readable */
-            --color-text-muted: #D97706; /* More readable */
-            --color-text-heading: #FFFFFF;
-            --color-primary: #FF4500;
-            --color-secondary: #DC143C;
-            --color-border: #4f2010;
-            --color-logo-primary: var(--color-primary);
-        }
-        [data-theme="tyrant"] {
-            --color-bg: #120A1A;
-            --color-bg-alt: #241436;
-            --color-text-base: #EAE0FF;
-            --color-text-muted: #c0b0e0;
-            --color-text-heading: #FFFFFF;
-            --color-primary: #9400D3;
-            --color-secondary: #FFD700;
-            --color-border: #4a2c6b;
-            --color-logo-primary: var(--color-primary);
-        }
-        [data-theme="glitch-protocol"] {
-            --color-bg: #000000;
-            --color-bg-alt: #111111;
-            --color-text-base: #E0E0E0;
-            --color-text-muted: #999999;
-            --color-text-heading: #FFFFFF;
-            --color-primary: #00FF00;
-            --color-secondary: #FF00FF;
-            --color-border: #333333;
-            --color-logo-primary: var(--color-primary);
-        }
-        [data-theme="red-ledger"] {
-            --color-bg: #FDFDFD;
-            --color-bg-alt: #F5F5F5;
-            --color-text-base: #222222;
-            --color-text-muted: #666666;
-            --color-text-heading: #000000;
-            --color-primary: #B22222;
-            --color-secondary: #555555;
-            --color-border: #DDDDDD;
-            --color-logo-primary: var(--color-primary);
-        }
-        [data-theme="molten-core"] {
-            --color-bg: #1C1917;
-            --color-bg-alt: #292524;
-            --color-text-base: #F1F5F9;
-            --color-text-muted: #A8A29E;
-            --color-text-heading: #FFFFFF;
-            --color-primary: #F97316;
-            --color-secondary: #EF4444;
-            --color-border: #44403C;
-            --color-logo-primary: var(--color-primary);
-        }
-        [data-theme="crimson-reaper"] {
-            --color-bg: #000000;
-            --color-bg-alt: #111111;
-            --color-text-base: #FFFFFF;
-            --color-text-muted: #A0A0A0;
-            --color-text-heading: #FFFFFF;
-            --color-primary: #DC143C;
-            --color-secondary: #B22222;
-            --color-border: #333000;
-            --color-logo-primary: var(--color-primary);
-        }
-
-        /* NEW STRATEGIC THEMES */
-        [data-theme="ivory-tower"] {
-            --color-bg: #FFFFFF;
-            --color-bg-alt: #F7F7F7;
-            --color-text-base: #222222;
-            --color-text-muted: #666666;
-            --color-text-heading: #000000;
-            --color-primary: #444444;
-            --color-secondary: #888888;
-            --color-border: #EAEAEA;
-            --color-logo-primary: var(--color-primary);
-        }
-        [data-theme="sentinel-blue"] {
-            --color-bg: #0A192F;
-            --color-bg-alt: #172A45;
-            --color-text-base: #CCD6F6;
-            --color-text-muted: #8892B0;
-            --color-text-heading: #FFFFFF;
-            --color-primary: #64FFDA;
-            --color-secondary: #3A82EE;
-            --color-border: #233554;
-            --color-logo-primary: var(--color-primary);
-        }
-        [data-theme="obsidian"] {
-            --color-bg: #000000;
-            --color-bg-alt: #111111;
-            --color-text-base: #EAEAEA;
-            --color-text-muted: #999999;
-            --color-text-heading: #FFFFFF;
-            --color-primary: #FFFFFF;
-            --color-secondary: #CCCCCC;
-            --color-border: #222222;
-            --color-logo-primary: var(--color-primary);
-        }
-        [data-theme="diablo-ivory"] {
-            --color-bg: #FFFFFF;
-            --color-bg-alt: #F5F5F5;
-            --color-text-base: #222222;
-            --color-text-muted: #666666;
-            --color-text-heading: #000000;
-            --color-primary: #B22222;
-            --color-secondary: #8B0000;
-            --color-border: #DDDDDD;
-            --color-logo-primary: var(--color-primary);
-        }
-
-
-        /* Apply theme variables */
-        .bg-main { background-color: var(--color-bg); }
-        .bg-alt { background-color: var(--color-bg-alt); }
-        .text-base { color: var(--color-text-base); }
-        .text-muted { color: var(--color-text-muted); }
-        .text-heading { color: var(--color-text-heading); }
-        .text-primary { color: var(--color-primary); }
-        .text-secondary { color: var(--color-secondary); }
-        .border-main { border-color: var(--color-border); }
-        .logo-primary { color: var(--color-logo-primary); }
+        .bg-main { background-color: #000000; }
+        .bg-alt { background-color: #111111; }
+        .text-base { color: #FFFFFF; }
+        .text-muted { color: #A0A0A0; }
+        .text-heading { color: #FFFFFF; }
+        .text-primary { color: #DC143C; }
+        .text-secondary { color: #B22222; }
+        .border-main { border-color: #333000; }
+        .logo-primary { color: #DC143C; }
         
         .btn-primary {
-            background-color: var(--color-hostile-red);
+            background-color: #DC143C;
             color: #FFFFFF;
             font-weight: 700;
             transition: all 0.3s ease;
@@ -264,39 +35,22 @@
 
         .btn-secondary {
             background-color: transparent;
-            color: var(--color-text-base);
-            border: 1px solid var(--color-border);
+            color: #FFFFFF;
+            border: 1px solid #333000;
             transition: all 0.3s ease;
         }
 
-        .btn-secondary.btn-secondary-hostile {
-            border-color: var(--color-hostile-red);
-        }
-
         .integration-logo {
-    height: 36px;
-    width: auto;
-    max-width: 100px;
-    object-fit: contain;
-}
-@media (max-width: 768px) {
-    .integration-logo {
-        height: 20px;
-        max-width: 80px;
-    }
-}
-
-        /* Gradient specific styles */
-        [data-theme="gradient-flow"] .hero-gradient,
-        [data-theme="retro-futurism"] .hero-gradient {
-            background-image: linear-gradient(to right, var(--color-primary), var(--color-secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-fill-color: transparent;
+            height: 36px;
+            width: auto;
+            max-width: 100px;
+            object-fit: contain;
         }
-        .hero-gradient {
-            color: var(--color-primary);
+        @media (max-width: 768px) {
+            .integration-logo {
+                height: 20px;
+                max-width: 80px;
+            }
         }
 
         .replaced-text {
@@ -329,18 +83,17 @@
         }
 
         .btn-secondary:hover {
-            background-color: var(--color-bg-alt);
-            border-color: var(--color-hostile-red);
-            color: var(--color-hostile-red);
+            background-color: #111111;
+            border-color: #DC143C;
+            color: #DC143C;
             transform: scale(1.05);
         }
         
         .badge-highlight {
-            background-color: var(--color-hostile-red);
+            background-color: #DC143C;
             color: #FFFFFF;
         }
 
-        /* Other styling */
         .reveal {
             opacity: 0;
             transform: translateY(20px);
@@ -349,81 +102,6 @@
         .reveal.visible {
             opacity: 1;
             transform: translateY(0);
-        }
-        
-        /* Theme Switcher Styles */
-        #theme-switcher-toggle {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 1000;
-            background-color: var(--color-bg-alt);
-            color: var(--color-text-base);
-            border: 1px solid var(--color-border);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        #theme-switcher-toggle:hover {
-            transform: scale(1.1) rotate(20deg);
-        }
-        #theme-panel {
-            position: fixed;
-            bottom: 80px;
-            right: 20px;
-            z-index: 999;
-            background-color: var(--color-bg-alt);
-            border: 1px solid var(--color-border);
-            border-radius: 8px;
-            padding: 1rem;
-            width: 200px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-            opacity: 0;
-            transform: translateY(10px);
-            visibility: hidden;
-            transition: all 0.3s ease;
-        }
-        #theme-panel.active {
-            opacity: 1;
-            transform: translateY(0);
-            visibility: visible;
-        }
-        .theme-button {
-            display: block;
-            width: 100%;
-            text-align: left;
-            padding: 0.5rem;
-            border-radius: 4px;
-            cursor: pointer;
-            margin-bottom: 0.25rem;
-            color: var(--color-text-base);
-            font-size: 0.9rem;
-            transition: background-color 0.2s ease;
-        }
-        .theme-button:hover {
-            background-color: var(--color-bg);
-        }
-        .theme-button.active {
-            font-weight: bold;
-            color: var(--color-primary);
-        }
-
-        .theme-select-button {
-            transition: all 0.2s ease;
-            border: 2px solid transparent;
-            box-shadow: 0 0 0 2px var(--color-bg-alt);
-        }
-        .theme-select-button:hover {
-            transform: scale(1.2);
-        }
-        .theme-select-button.active {
-            border-color: var(--color-primary);
-            transform: scale(1.1);
         }
     </style>
 </head>
@@ -481,17 +159,7 @@
                                 <a href="#live-demo" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-base hover:bg-alt">The Briefing</a>
                             </div>
                             <div class="py-6">
-                                <p class="text-sm font-semibold text-muted mb-4 px-3">Quick Theme</p>
-                                <div class="flex items-center gap-x-4 px-3">
-                                     <button class="theme-select-button w-6 h-6 rounded-full" data-theme="crimson-reaper" style="background-color: #DC143C;" title="Crimson Reaper"></button>
-                                     <button class="theme-select-button w-6 h-6 rounded-full" data-theme="sentinel-blue" style="background-color: #64FFDA;" title="Sentinel Blue"></button>
-                                     <button class="theme-select-button w-6 h-6 rounded-full" data-theme="diablo-ivory" style="background-color: #B22222;" title="Diablo Ivory"></button>
-                                     <button class="theme-select-button w-6 h-6 rounded-full" data-theme="obsidian" style="background-color: #FFFFFF;" title="Obsidian"></button>
-                                     <button class="theme-select-button w-6 h-6 rounded-full" data-theme="ivory-tower" style="background-color: #444444;" title="Ivory Tower"></button>
-                                </div>
-                            </div>
-                            <div class="py-6">
-                                <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-base hover:bg-alt">Log in</a>
+                                <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-base hover:bg-alt">Sign Up</a>
                             </div>
                         </div>
                     </div>
@@ -501,7 +169,7 @@
 
         <main class="relative isolate px-6 pt-14 lg:px-8">
             <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
-                <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[var(--color-secondary)] to-[var(--color-primary)] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+                <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#B22222] to-[#DC143C] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
             </div>
             <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
                 <div class="text-center">
@@ -535,7 +203,6 @@
              <img src="microsoft-logo.png" alt="Microsoft 365" class="integration-logo opacity-70 hover:opacity-100 transition-all cursor-default grayscale hover:grayscale-0">
             <span class="text-accent-red text-2xl font-bold">&bull;</span>
              <img src="gspace.png" alt="Google Workspace" class="integration-logo opacity-70 hover:opacity-100 transition-all cursor-default grayscale hover:grayscale-0">
-
         </div>
     </div>
 </section>
@@ -655,45 +322,6 @@
         </div>
     </footer>
 
-    
-    <button id="theme-switcher-toggle" title="Change Theme">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 0 0-5.78 1.128 2.25 2.25 0 0 1-2.475 2.118A2.25 2.25 0 0 1 .879 16.122a3 3 0 0 0 5.78-1.128 2.25 2.25 0 0 1 2.475-2.118 2.25 2.25 0 0 1 2.118 2.475Z" />
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12.632 3.675a3 3 0 0 1-5.264 2.556 2.25 2.25 0 0 0-2.475-2.118 2.25 2.25 0 0 0-2.118 2.475 3 3 0 0 1 5.264-2.556 2.25 2.25 0 0 0 2.475 2.118 2.25 2.25 0 0 0 2.118-2.475Z" />
-            <path stroke-linecap="round" stroke-linejoin="round" d="m16.121 9.53 1.128-5.78a3 3 0 0 0-1.128-5.78 2.25 2.25 0 0 1-2.118-2.475 2.25 2.25 0 0 1-2.475-2.118 3 3 0 0 0-5.78 1.128 2.25 2.25 0 0 1 2.118 2.475 2.25 2.25 0 0 1 2.475 2.118 3 3 0 0 0 5.78-1.128Z" />
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3.675 12.632a3 3 0 0 1 2.556 5.264 2.25 2.25 0 0 0 2.118 2.475 2.25 2.25 0 0 0 2.475-2.118 3 3 0 0 1-2.556-5.264 2.25 2.25 0 0 0-2.118-2.475 2.25 2.25 0 0 0-2.475 2.118Z" />
-        </svg>
-    </button>
-    <div id="theme-panel">
-        <h4 class="text-sm font-bold text-heading mb-2">Select a Theme</h4>
-        <div class="border-b border-main mb-2 pb-2">
-            <h5 class="text-xs font-bold text-muted uppercase tracking-wider mb-2">Hostile</h5>
-            <button class="theme-button" data-theme="crimson-reaper">Crimson Reaper</button>
-            <button class="theme-button" data-theme="molten-core">Molten Core</button>
-            <button class="theme-button" data-theme="inferno">Inferno</button>
-            <button class="theme-button" data-theme="tyrant">Tyrant</button>
-            <button class="theme-button" data-theme="glitch-protocol">Glitch Protocol</button>
-            <button class="theme-button" data-theme="red-ledger">Red Ledger</button>
-        </div>
-        <div class="border-b border-main mb-2 pb-2">
-            <h5 class="text-xs font-bold text-muted uppercase tracking-wider mb-2">Strategic</h5>
-            <button class="theme-button" data-theme="diablo-ivory">Diablo Ivory</button>
-            <button class="theme-button" data-theme="sentinel-blue">Sentinel Blue</button>
-            <button class="theme-button" data-theme="obsidian">Obsidian</button>
-            <button class="theme-button" data-theme="ivory-tower">Ivory Tower</button>
-        </div>
-        <h5 class="text-xs font-bold text-muted uppercase tracking-wider mb-2">Standard</h5>
-        <button class="theme-button" data-theme="corporate-edge">Corporate-Edge</button>
-        <button class="theme-button" data-theme="gradient-flow">Gradient-Flow</button>
-        <button class="theme-button" data-theme="minimalist-tech">Minimalist-Tech</button>
-        <button class="theme-button" data-theme="emerald-insight">Emerald-Insight</button>
-        <button class="theme-button" data-theme="sunrise-automation">Sunrise-Automation</button>
-        <button class="theme-button" data-theme="cobalt-steel">Cobalt-Steel</button>
-        <button class="theme-button" data-theme="premium-noir">Premium-Noir</button>
-        <button class="theme-button" data-theme="bio-luminescent">Bio-Luminescent</button>
-        <button class="theme-button" data-theme="retro-futurism">Retro-Futurism</button>
-    </div>
-
     <script>
         // Reveal on scroll
         const revealElements = document.querySelectorAll('.reveal');
@@ -705,43 +333,6 @@
             });
         }, { threshold: 0.1 });
         revealElements.forEach(el => revealObserver.observe(el));
-        
-        // Theme Switcher Logic
-        const themeToggleButton = document.getElementById('theme-switcher-toggle');
-        const themePanel = document.getElementById('theme-panel');
-        const themeButtons = document.querySelectorAll('.theme-button');
-        const themeSelectButtons = document.querySelectorAll('.theme-select-button');
-        const docElement = document.documentElement;
-
-        const applyTheme = (theme) => {
-            docElement.setAttribute('data-theme', theme);
-            localStorage.setItem('agent-salesforce-theme', theme);
-
-            themeButtons.forEach(btn => {
-                btn.classList.toggle('active', btn.dataset.theme === theme);
-            });
-             themeSelectButtons.forEach(btn => {
-                btn.classList.toggle('active', btn.dataset.theme === theme);
-            });
-        };
-
-        themeToggleButton.addEventListener('click', () => {
-            themePanel.classList.toggle('active');
-        });
-
-        themeButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const themeName = button.dataset.theme;
-                applyTheme(themeName);
-            });
-        });
-
-         themeSelectButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const themeName = button.dataset.theme;
-                applyTheme(themeName);
-            });
-        });
 
         // Mobile Menu Logic
         const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -755,19 +346,11 @@
             mobileMenu.classList.add('hidden');
         });
         // Close menu when a link is clicked
-        mobileMenu.querySelectorAll('a, .theme-select-button').forEach(el => {
-            el.addEventListener('click', (e) => {
-                 if(e.currentTarget.tagName.toLowerCase() !== 'button') {
-                     mobileMenu.classList.add('hidden');
-                 }
+        mobileMenu.querySelectorAll('a').forEach(el => {
+            el.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
             });
         });
-
-
-        // Apply saved theme on load
-        const savedTheme = localStorage.getItem('agent-salesforce-theme') || 'crimson-reaper';
-        applyTheme(savedTheme);
-
     </script>
 </body>
 </html>
