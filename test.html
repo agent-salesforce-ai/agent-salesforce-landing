@@ -23,6 +23,7 @@
         .text-secondary { color: #B22222; }
         .border-main { border-color: #333000; }
         .logo-primary { color: #DC143C; }
+        
         .btn-primary {
             background-color: #DC143C;
             color: #FFFFFF;
@@ -73,6 +74,17 @@
             color: #DC143C;
             transform: scale(1.05);
         }
+        .enterprise-badge {
+            background-color: #DC143C;
+            color: #FFFFFF;
+            padding: 8px 24px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.875rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            display: inline-block;
+        }
     </style>
 </head>
 <body class="bg-main text-base antialiased">
@@ -100,10 +112,10 @@
                 <div class="hidden lg:flex lg:gap-x-12">
                     <a href="#features" class="text-sm font-semibold leading-6 text-base hover:text-primary transition-colors">The Arsenal</a>
                     <a href="#solutions" class="text-sm font-semibold leading-6 text-base hover:text-primary transition-colors">The Takeover</a>
-                    <a href="#live-demo" class="text-sm font-semibold leading-6 text-base hover:text-primary transition-colors">The Briefing</a>
+                    <a href="#contact" class="text-sm font-semibold leading-6 text-base hover:text-primary transition-colors">Contact</a>
                 </div>
                 <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-                    <a href="https://agent-salesforce.ai/demo/" class="text-sm font-semibold leading-6 text-base hover:text-primary transition-colors">Contact Us <span aria-hidden="true">&rarr;</span></a>
+                    <a href="#contact" class="text-sm font-semibold leading-6 text-base hover:text-primary transition-colors">Contact Us <span aria-hidden="true">&rarr;</span></a>
                 </div>
             </nav>
             <div class="lg:hidden hidden" role="dialog" id="mobile-menu">
@@ -125,10 +137,10 @@
                             <div class="space-y-2 py-6">
                                 <a href="#features" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-alt">The Arsenal</a>
                                 <a href="#solutions" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-alt">The Takeover</a>
-                                <a href="#live-demo" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-alt">The Briefing</a>
+                                <a href="#contact" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-alt">Contact</a>
                             </div>
                             <div class="py-6">
-                                <a href="https://agent-salesforce.ai/demo/" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 hover:bg-alt">Contact Us</a>
+                                <a href="#contact" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 hover:bg-alt">Contact Us</a>
                             </div>
                         </div>
                     </div>
@@ -142,11 +154,14 @@
             </div>
             <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
                 <div class="text-center">
+                    <div class="mb-6">
+                        <span class="enterprise-badge">ENTERPRISE ONLY</span>
+                    </div>
                     <h1 class="text-4xl font-bold tracking-tight text-heading sm:text-6xl">Your Top Performer Just Got <span class="replaced-text">Replaced</span>.</h1>
-                    <p class="mt-6 text-lg leading-8 text-muted">This is Agent-SalesForce.ai. It doesn't need commission. It doesn't sleep. And it's here to render old sales methods obsolete. Enterprise-only precision for organizations ready to dominate.</p>
+                    <p class="mt-6 text-lg leading-8 text-muted">AI that doesn't need commission. Doesn't sleep. And renders old sales methods obsolete.</p>
                     <div class="mt-10 flex items-center justify-center gap-x-6">
-                        <a href="https://agent-salesforce.ai/demo/" class="btn-primary rounded-md px-4 py-2.5 text-sm">Request Enterprise Access</a>
-                        <a href="#features" class="btn-secondary rounded-md px-4 py-2.5 text-sm font-semibold">See the Arsenal</a>
+                        <a href="#contact" class="btn-primary rounded-md px-6 py-3 text-sm">Contact Us</a>
+                        <a href="#features" class="btn-secondary rounded-md px-6 py-3 text-sm font-semibold">See the Arsenal</a>
                     </div>
                 </div>
             </div>
@@ -206,10 +221,6 @@
                     <p class="text-muted mt-2">It never sleeps, never takes a day off, and never stops learning. While your competition rests, it's closing deals and refining its methods.</p>
                 </div>
             </div>
-
-            <div class="mt-12 text-center">
-                <a href="https://agent-salesforce.ai/demo/" class="btn-primary inline-block px-8 py-3 text-lg rounded-md">Contact Us</a>
-            </div>
         </div>
     </section>
     
@@ -238,14 +249,11 @@
                     </div>
                 </div>
 
-                <div class="bg-main p-8 rounded-lg border-2 border-primary shadow-2xl shadow-primary/20 flex flex-col">
+                <div class="bg-main p-8 rounded-lg border border-main interactive-card flex flex-col">
                     <div class="flex-grow">
                         <h3 class="text-2xl font-bold text-heading">The Opener</h3>
                         <p class="mt-2 text-primary font-semibold">Maximum Efficiency. Zero Hesitation.</p>
                         <p class="text-muted mt-4 text-sm">Mines terabytes of data to find every ideal prospect, engages thousands simultaneously, and systematically converts raw interest into a pipeline filled with qualified applications.</p>
-                    </div>
-                    <div class="mt-6">
-                        <a href="https://agent-salesforce.ai/demo/" class="btn-primary inline-block w-full text-center px-6 py-3 text-sm font-semibold rounded-md">Contact Us</a>
                     </div>
                 </div>
 
@@ -260,15 +268,16 @@
         </div>
     </section>
 
-    <section id="live-demo" class="py-20 md:py-28 bg-main">
+    <section id="contact" class="py-20 md:py-28 bg-main">
         <div class="container mx-auto px-6">
-            <div class="text-center max-w-3xl mx-auto">
-                <p class="text-sm font-bold uppercase text-primary tracking-widest">Enterprise-Only Access</p>
-                <h2 class="text-3xl md:text-4xl font-bold text-heading mt-2">Ready to Dominate?</h2>
-                <p class="text-lg text-muted mt-4">Agent-SalesForce.ai is exclusively available for enterprise organizations. Contact us to discuss how we'll replace your openers and triple your pipeline. This isn't for everyone. Is it for you?</p>
-                <div class="mt-10">
-                    <a href="https://agent-salesforce.ai/demo/" class="btn-primary inline-block px-8 py-4 text-lg rounded-md">Request Enterprise Consultation</a>
+            <div class="text-center max-w-3xl mx-auto border border-main rounded-2xl p-12 bg-alt">
+                <h2 class="text-3xl md:text-4xl font-bold text-heading">Currently enterprise-only.</h2>
+                <p class="text-lg text-muted mt-4">The rest of the world — <span class="text-primary">soon</span>.</p>
+                <div class="mt-10 flex flex-col gap-4 max-w-md mx-auto">
+                    <a href="https://agent-salesforce.ai/demo/" class="btn-primary inline-block w-full text-center px-8 py-4 text-lg rounded-md">Request Access</a>
+                    <a href="mailto:theopener@agent-salesforce.ai" class="btn-secondary inline-block w-full text-center px-8 py-4 text-lg rounded-md font-semibold">Contact Us</a>
                 </div>
+                <p class="text-sm text-muted mt-6 italic">Invite only. Limited availability.</p>
             </div>
         </div>
     </section>
