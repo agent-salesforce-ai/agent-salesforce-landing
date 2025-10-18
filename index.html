@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agent-SalesForce.ai</title>
-    <link rel="icon" type="image/png" href="icon.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,7 +14,6 @@
             background-color: #000000;
             color: #FFFFFF;
         }
-
         .bg-main { background-color: #000000; }
         .bg-alt { background-color: #111111; }
         .text-base { color: #FFFFFF; }
@@ -32,14 +30,12 @@
             font-weight: 700;
             transition: all 0.3s ease;
         }
-
         .btn-secondary {
             background-color: transparent;
             color: #FFFFFF;
             border: 1px solid #333000;
             transition: all 0.3s ease;
         }
-
         .integration-logo {
             height: 36px;
             width: auto;
@@ -52,17 +48,14 @@
                 max-width: 80px;
             }
         }
-
         .replaced-text {
             color: #DC143C;
             text-decoration: line-through;
             text-decoration-thickness: 2px;
         }
-
         .text-accent-red {
             color: #DC143C !important;
         }
-        
         .interactive-card {
             transition: all 0.3s ease;
         }
@@ -70,60 +63,48 @@
             transform: translateY(-8px);
             border-color: #DC143C;
         }
-        
-        .coming-soon-card {
-            opacity: 0.6;
-            filter: grayscale(50%);
-        }
-
         .btn-primary:hover {
-             filter: brightness(1.2);
-             transform: scale(1.05);
-             box-shadow: 0 0 25px rgba(220, 20, 60, 0.8);
+            filter: brightness(1.2);
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(220, 20, 60, 0.8);
         }
-
         .btn-secondary:hover {
             background-color: #111111;
             border-color: #DC143C;
             color: #DC143C;
             transform: scale(1.05);
         }
-        
-        .badge-highlight {
+        .enterprise-badge {
             background-color: #DC143C;
             color: #FFFFFF;
-        }
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
+            padding: 8px 24px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.875rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            display: inline-block;
         }
     </style>
 </head>
 <body class="bg-main text-base antialiased">
-
     <div class="bg-main">
         <header class="absolute inset-x-0 top-0 z-50">
-            <nav class="container mx-auto flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+            <nav class="container mx-auto flex items-center justify-between p-6 lg:px-8">
                 <div class="flex lg:flex-1">
                     <a href="#" class="-m-1.5 p-1.5">
                         <div class="flex items-center space-x-2">
-                             <svg class="h-8 w-8 logo-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                 <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456Z" />
-                             </svg>
+                            <svg class="h-8 w-8 logo-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456Z" />
+                            </svg>
                             <span class="text-xl font-bold text-heading">Agent-Sales<span class="font-extrabold text-accent-red">Force.ai</span></span>
                         </div>
                     </a>
                 </div>
-                 <div class="flex lg:hidden">
+                <div class="flex lg:hidden">
                     <button type="button" id="mobile-menu-button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-base">
                         <span class="sr-only">Open main menu</span>
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                         </svg>
                     </button>
@@ -131,22 +112,22 @@
                 <div class="hidden lg:flex lg:gap-x-12">
                     <a href="#features" class="text-sm font-semibold leading-6 text-base hover:text-primary transition-colors">The Arsenal</a>
                     <a href="#solutions" class="text-sm font-semibold leading-6 text-base hover:text-primary transition-colors">The Takeover</a>
-                    <a href="#live-demo" class="text-sm font-semibold leading-6 text-base hover:text-primary transition-colors">The Briefing</a>
+                    <a href="#contact" class="text-sm font-semibold leading-6 text-base hover:text-primary transition-colors">Contact</a>
                 </div>
                 <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-                    <a href="https://agent-salesforce.ai/demo/" class="text-sm font-semibold leading-6 text-base hover:text-primary transition-colors">Sign Up <span aria-hidden="true">&rarr;</span></a>
+                    <a href="#contact" class="text-sm font-semibold leading-6 text-base hover:text-primary transition-colors">Contact Us <span aria-hidden="true">&rarr;</span></a>
                 </div>
             </nav>
-            <div class="lg:hidden hidden" role="dialog" aria-modal="true" id="mobile-menu">
+            <div class="lg:hidden hidden" role="dialog" id="mobile-menu">
                 <div class="fixed inset-0 z-50"></div>
-                <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-main px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+                <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-main px-6 py-6 sm:max-w-sm">
                     <div class="flex items-center justify-between">
                         <a href="#" class="-m-1.5 p-1.5">
                             <span class="text-xl font-bold text-heading">Agent-Sales<span class="font-extrabold text-accent-red">Force.ai</span></span>
                         </a>
                         <button type="button" id="mobile-menu-close" class="-m-2.5 rounded-md p-2.5 text-base">
                             <span class="sr-only">Close menu</span>
-                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                             </svg>
                         </button>
@@ -154,12 +135,12 @@
                     <div class="mt-6 flow-root">
                         <div class="-my-6 divide-y border-main">
                             <div class="space-y-2 py-6">
-                                <a href="#features" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-base hover:bg-alt">The Arsenal</a>
-                                <a href="#solutions" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-base hover:bg-alt">The Takeover</a>
-                                <a href="#live-demo" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-base hover:bg-alt">The Briefing</a>
+                                <a href="#features" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-alt">The Arsenal</a>
+                                <a href="#solutions" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-alt">The Takeover</a>
+                                <a href="#contact" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-alt">Contact</a>
                             </div>
                             <div class="py-6">
-                                <a href="https://agent-salesforce.ai/demo/" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-base hover:bg-alt">Sign Up</a>
+                                <a href="#contact" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 hover:bg-alt">Contact Us</a>
                             </div>
                         </div>
                     </div>
@@ -168,46 +149,46 @@
         </header>
 
         <main class="relative isolate px-6 pt-14 lg:px-8">
-            <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
+            <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
                 <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#B22222] to-[#DC143C] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
             </div>
             <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
                 <div class="text-center">
-                    <h1 class="text-4xl font-bold tracking-tight text-heading sm:text-6xl">Your Top Performer Just Got <span class="replaced-text">Replaced</span>.</h1>
-                    <p class="mt-6 text-lg leading-8 text-muted">This is Agent-SalesForce.ai. It doesn't need commission. It doesn't sleep. And it's here to render old sales methods obsolete.</p>
-                    <div class="mt-10 flex items-center justify-center gap-x-6">
-                        <a href="https://agent-salesforce.ai/demo/" class="btn-primary rounded-md px-4 py-2.5 text-sm">Witness the Takeover</a>
-                        <a href="#features" class="btn-secondary rounded-md px-4 py-2.5 text-sm font-semibold">See the Arsenal</a>
-                    </div>
+<div class="mb-12">
+    <span class="enterprise-badge">ENTERPRISE ONLY</span>
+    <p class="text-sm text-muted mt-3 italic">Coming to the rest of the world <span class="text-primary font-semibold not-italic">soon</span>.</p>
+</div>
+<h1 class="text-4xl font-bold tracking-tight text-heading sm:text-6xl">Your Top Performer Just Got <span class="replaced-text">Replaced</span>.</h1>
+<p class="mt-6 text-lg leading-8 text-muted">AI that doesn't need commission. Doesn't sleep. And renders old sales methods obsolete.</p>
                 </div>
             </div>
         </main>
     </div>
     
-<section class="py-12 bg-alt">
-    <div class="container mx-auto px-6">
-        <p class="text-center text-accent-red text-sm font-semibold mb-8 uppercase tracking-wider">TRUSTED USERS AND SYSTEMS</p>
-        <div class="flex flex-wrap justify-center items-center gap-x-8 gap-y-6 md:gap-x-12">
-            <img src="sutton-logo.png" alt="Sutton" class="integration-logo opacity-70 hover:opacity-100 transition-all cursor-default grayscale hover:grayscale-0">
-            <span class="text-accent-red text-2xl font-bold">&bull;</span>
-            <img src="aqua-logo.png" alt="Aquamark" class="integration-logo opacity-70 hover:opacity-100 transition-all cursor-default grayscale hover:grayscale-0">
-            <span class="text-accent-red text-2xl font-bold">&bull;</span>
-             <img src="trust-capital.png" alt="Trust" class="integration-logo opacity-70 hover:opacity-100 transition-all cursor-default grayscale hover:grayscale-0">
-             <span class="text-accent-red text-2xl font-bold">&bull;</span>
-             <img src="zoho-logo.png" alt="Zoho" class="integration-logo opacity-70 hover:opacity-100 transition-all cursor-default grayscale hover:grayscale-0">
-            <span class="text-accent-red text-2xl font-bold">&bull;</span>
-             <img src="sf-logo.png" alt="Salesforce" class="integration-logo opacity-70 hover:opacity-100 transition-all cursor-default grayscale hover:grayscale-0">
-            <span class="text-accent-red text-2xl font-bold">&bull;</span>
-             <img src="hubspot-logo.png" alt="HubSpot" class="integration-logo opacity-70 hover:opacity-100 transition-all cursor-default grayscale hover:grayscale-0">
-            <span class="text-accent-red text-2xl font-bold">&bull;</span>
-             <img src="microsoft-logo.png" alt="Microsoft 365" class="integration-logo opacity-70 hover:opacity-100 transition-all cursor-default grayscale hover:grayscale-0">
-            <span class="text-accent-red text-2xl font-bold">&bull;</span>
-             <img src="gspace.png" alt="Google Workspace" class="integration-logo opacity-70 hover:opacity-100 transition-all cursor-default grayscale hover:grayscale-0">
+    <section class="py-12 bg-alt">
+        <div class="container mx-auto px-6">
+            <p class="text-center text-accent-red text-sm font-semibold mb-8 uppercase tracking-wider">TRUSTED USERS AND SYSTEMS</p>
+            <div class="flex flex-wrap justify-center items-center gap-x-8 gap-y-6 md:gap-x-12">
+                <img src="sutton-logo.png" alt="Sutton" class="integration-logo opacity-70 hover:opacity-100 transition-all cursor-default grayscale hover:grayscale-0">
+                <span class="text-accent-red text-2xl font-bold">&bull;</span>
+                <img src="aqua-logo.png" alt="Aquamark" class="integration-logo opacity-70 hover:opacity-100 transition-all cursor-default grayscale hover:grayscale-0">
+                <span class="text-accent-red text-2xl font-bold">&bull;</span>
+                <img src="trust-capital.png" alt="Trust" class="integration-logo opacity-70 hover:opacity-100 transition-all cursor-default grayscale hover:grayscale-0">
+                <span class="text-accent-red text-2xl font-bold">&bull;</span>
+                <img src="zoho-logo.png" alt="Zoho" class="integration-logo opacity-70 hover:opacity-100 transition-all cursor-default grayscale hover:grayscale-0">
+                <span class="text-accent-red text-2xl font-bold">&bull;</span>
+                <img src="sf-logo.png" alt="Salesforce" class="integration-logo opacity-70 hover:opacity-100 transition-all cursor-default grayscale hover:grayscale-0">
+                <span class="text-accent-red text-2xl font-bold">&bull;</span>
+                <img src="hubspot-logo.png" alt="HubSpot" class="integration-logo opacity-70 hover:opacity-100 transition-all cursor-default grayscale hover:grayscale-0">
+                <span class="text-accent-red text-2xl font-bold">&bull;</span>
+                <img src="microsoft-logo.png" alt="Microsoft 365" class="integration-logo opacity-70 hover:opacity-100 transition-all cursor-default grayscale hover:grayscale-0">
+                <span class="text-accent-red text-2xl font-bold">&bull;</span>
+                <img src="gspace.png" alt="Google Workspace" class="integration-logo opacity-70 hover:opacity-100 transition-all cursor-default grayscale hover:grayscale-0">
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section id="features" class="py-20 md:py-28 bg-main">
+    <section id="features" class="py-20 md:py-28 bg-main">
         <div class="container mx-auto px-6">
             <div class="text-center max-w-4xl mx-auto">
                 <p class="text-sm font-bold uppercase text-primary tracking-widest">The Arsenal</p>
@@ -227,7 +208,7 @@
                     <p class="text-muted mt-2">It mines through the noise, extracts real intent, and delivers qualified leads that matter.</p>
                 </div>
                 <div class="bg-alt p-6 rounded-lg border border-main interactive-card">
-                     <div class="text-accent-red"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" /></svg></div>
+                    <div class="text-accent-red"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" /></svg></div>
                     <h3 class="text-xl font-bold text-heading mt-4">Human Error: Eliminated</h3>
                     <p class="text-muted mt-2">Every call, email, and meeting is logged and analyzed flawlessly. No more forgotten follow-ups. No more "bad days." Only perfect execution.</p>
                 </div>
@@ -236,10 +217,6 @@
                     <h3 class="text-xl font-bold text-heading mt-4">The 24/7 Operator</h3>
                     <p class="text-muted mt-2">It never sleeps, never takes a day off, and never stops learning. While your competition rests, it's closing deals and refining its methods.</p>
                 </div>
-            </div>
-
-            <div class="mt-12 text-center">
-                <a href="https://agent-salesforce.ai/demo/" class="btn-primary inline-block px-8 py-3 text-lg rounded-md">Book a Demo</a>
             </div>
         </div>
     </section>
@@ -253,29 +230,15 @@
             </div>
             
             <div class="mt-16 mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-8">
-                
-                <div class="bg-main p-8 rounded-lg border-2 border-primary shadow-2xl shadow-primary/20 flex flex-col">
+                <div class="bg-main p-8 rounded-lg border border-main interactive-card flex flex-col">
                     <div class="flex-grow">
-                        <h3 class="text-2xl font-bold text-heading">The Opener</h3>
-                        <p class="mt-2 text-primary font-semibold">Maximum Efficiency. Zero Hesitation.</p>
-                        <p class="text-muted mt-4 text-sm">Mines terabytes of data to find every ideal prospect, engages thousands simultaneously, and systematically converts raw interest into a pipeline filled with qualified applications.</p>
-                    </div>
-                    <div class="mt-6">
-                        <a href="https://agent-salesforce.ai/demo/" class="btn-primary inline-block w-full text-center px-6 py-3 text-sm font-semibold rounded-md">Schedule Demo</a>
+                        <h3 class="text-2xl font-bold text-heading">The Assistant</h3>
+                        <p class="mt-2 text-secondary font-semibold">Perfect Support. Zero Friction.</p>
+                        <p class="text-muted mt-4 text-sm">Handles all administrative tasks, scheduling, and follow-ups with perfect accuracy, freeing up human counterparts for high-value strategic work.</p>
                     </div>
                 </div>
 
-                <div class="bg-main p-8 rounded-lg border border-main interactive-card coming-soon-card relative flex flex-col">
-                     <span class="badge-highlight absolute top-4 right-4 text-xs font-bold px-2 py-1 rounded-full">Coming Soon</span>
-                     <div class="flex-grow">
-                        <h3 class="text-2xl font-bold text-heading">The Closer</h3>
-                        <p class="mt-2 text-secondary font-semibold">Flawless Execution. Every Time.</p>
-                        <p class="text-muted mt-4 text-sm">Analyzes live sentiment, counters every objection with the perfect response, and guides conversations to a successful close. It turns 'maybe' into a signed deal.</p>
-                    </div>
-                </div>
-
-                <div class="bg-main p-8 rounded-lg border border-main interactive-card coming-soon-card relative flex flex-col">
-                    <span class="badge-highlight absolute top-4 right-4 text-xs font-bold px-2 py-1 rounded-full">Coming Soon</span>
+                <div class="bg-main p-8 rounded-lg border border-main interactive-card flex flex-col">
                     <div class="flex-grow">
                         <h3 class="text-2xl font-bold text-heading">The Executive</h3>
                         <p class="mt-2 text-secondary font-semibold">Strategic Oversight. Autonomous Growth.</p>
@@ -283,27 +246,35 @@
                     </div>
                 </div>
 
-                <div class="bg-main p-8 rounded-lg border border-main interactive-card coming-soon-card relative flex flex-col">
-                    <span class="badge-highlight absolute top-4 right-4 text-xs font-bold px-2 py-1 rounded-full">Coming Soon</span>
+                <div class="bg-main p-8 rounded-lg border border-main interactive-card flex flex-col">
                     <div class="flex-grow">
-                        <h3 class="text-2xl font-bold text-heading">The Assistant</h3>
-                        <p class="mt-2 text-secondary font-semibold">Perfect Support. Zero Friction.</p>
-                        <p class="text-muted mt-4 text-sm">Handles all administrative tasks, scheduling, and follow-ups with perfect accuracy, freeing up human counterparts for high-value strategic work.</p>
+                        <h3 class="text-2xl font-bold text-heading">The Opener</h3>
+                        <p class="mt-2 text-primary font-semibold">Maximum Efficiency. Zero Hesitation.</p>
+                        <p class="text-muted mt-4 text-sm">Mines terabytes of data to find every ideal prospect, engages thousands simultaneously, and systematically converts raw interest into a pipeline filled with qualified applications.</p>
+                    </div>
+                </div>
+
+                <div class="bg-main p-8 rounded-lg border border-main interactive-card flex flex-col">
+                    <div class="flex-grow">
+                        <h3 class="text-2xl font-bold text-heading">The Closer</h3>
+                        <p class="mt-2 text-secondary font-semibold">Flawless Execution. Every Time.</p>
+                        <p class="text-muted mt-4 text-sm">Analyzes live sentiment, counters every objection with the perfect response, and guides conversations to a successful close. It turns 'maybe' into a signed deal.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="live-demo" class="py-20 md:py-28 bg-main">
+    <section id="contact" class="py-20 md:py-28 bg-main">
         <div class="container mx-auto px-6">
-            <div class="text-center max-w-3xl mx-auto">
-                <p class="text-sm font-bold uppercase text-primary tracking-widest">Schedule Your Briefing</p>
-                <h2 class="text-3xl md:text-4xl font-bold text-heading mt-2">See It In Action</h2>
-                <p class="text-lg text-muted mt-4">The old way is over. Schedule a mandatory briefing to see how Agent-SalesForce.ai will replace your openers and triple your pipeline. Resistance is illogical.</p>
-                <div class="mt-10">
-                    <a href="https://agent-salesforce.ai/demo/" class="btn-primary inline-block px-8 py-4 text-lg rounded-md">Schedule Mandatory Briefing</a>
+            <div class="text-center max-w-3xl mx-auto border border-main rounded-2xl p-12 bg-alt">
+                <h2 class="text-3xl md:text-4xl font-bold text-heading">Currently enterprise-only.</h2>
+                <p class="text-lg text-muted mt-4">The rest of the world — <span class="text-primary">soon</span>.</p>
+                <div class="mt-10 flex flex-col gap-4 max-w-md mx-auto">
+                    <a href="https://agent-salesforce.ai/demo/" class="btn-primary inline-block w-full text-center px-8 py-4 text-lg rounded-md">Request Access</a>
+                    <a href="mailto:theopener@agent-salesforce.ai" class="btn-secondary inline-block w-full text-center px-8 py-4 text-lg rounded-md font-semibold">Contact Us</a>
                 </div>
+                <p class="text-sm text-muted mt-6 italic">Invite only. Limited availability.</p>
             </div>
         </div>
     </section>
@@ -316,33 +287,17 @@
                     <span class="text-xl font-bold text-heading">Agent-Sales<span class="font-extrabold text-accent-red">Force.ai</span></span>
                 </div>
                 
-                <div class="text-sm text-muted">
-                    <a href="mailto:theopener@agent-salesforce.ai" class="hover:text-base transition-colors">theopener@agent-salesforce.ai</a>
-                </div>
-                
-                <div class="border-t border-main pt-6 w-full max-w-2xl">
-                    <p class="text-sm text-muted mb-2">© 2025 Ables ai Inc - All rights reserved.</p>
-                    <div class="flex items-center justify-center gap-x-4">
-                        <a href="https://agent-salesforce.ai/privacy" class="text-sm text-muted hover:text-base transition-colors">Privacy Policy</a>
-                    </div>
+                <div class="text-sm text-muted space-y-3">
+    <a href="mailto:theopener@agent-salesforce.ai" class="hover:text-base transition-colors block">theopener@agent-salesforce.ai</a>
+    <p class="text-sm text-muted">© 2025 Ables ai Inc - All rights reserved.</p>
+    <a href="https://agent-salesforce.ai/privacy" class="text-sm text-muted hover:text-base transition-colors">Privacy Policy</a>
+</div>
                 </div>
             </div>
         </div>
     </footer>
 
     <script>
-        // Reveal on scroll
-        const revealElements = document.querySelectorAll('.reveal');
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
-        revealElements.forEach(el => revealObserver.observe(el));
-
-        // Mobile Menu Logic
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenuClose = document.getElementById('mobile-menu-close');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -353,7 +308,6 @@
         mobileMenuClose.addEventListener('click', () => {
             mobileMenu.classList.add('hidden');
         });
-        // Close menu when a link is clicked
         mobileMenu.querySelectorAll('a').forEach(el => {
             el.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
